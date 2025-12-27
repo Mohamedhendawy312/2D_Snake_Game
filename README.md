@@ -1,31 +1,72 @@
-# CPPND: Capstone Snake Game Example
+# 2D Snake Game
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+A classic snake game built with C++ and SDL2, extended with AI opponents and configurable settings.
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+## Features
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+- **AI Bot Snakes** - Computer-controlled opponents that chase food
+- **Progressive Difficulty** - New AI snake spawns every 3 points
+- **Collision System** - Your snake shrinks when hitting AI snakes
+- **Configurable Settings** - Customize via `config.txt` or runtime input
+- **Wrap-around Movement** - Snake wraps around screen edges
 
-## Dependencies for Running Locally
-* cmake >= 3.7
-  * All OSes: [click here for installation instructions](https://cmake.org/install/)
-* make >= 4.1 (Linux, Mac), 3.81 (Windows)
-  * Linux: make is installed by default on most Linux distros
-  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
-  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
-* SDL2 >= 2.0
-  * All installation instructions can be found [here](https://wiki.libsdl.org/Installation)
-  * Note that for Linux, an `apt` or `apt-get` installation is preferred to building from source.
-* gcc/g++ >= 5.4
-  * Linux: gcc / g++ is installed by default on most Linux distros
-  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
-  * Windows: recommend using [MinGW](http://www.mingw.org/)
+## How to Play
 
-## Basic Build Instructions
+- **Arrow Keys** - Control your snake (blue head)
+- **Eat Food** (yellow) - Grow longer, gain speed, increase score
+- **Avoid AI Snakes** (green heads) - Colliding shrinks you
+- **Don't Hit Yourself** - Game over if you collide with your own body
 
-1. Clone this repo.
-2. Make a build directory in the top level directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-4. Run it: `./SnakeGame`.
+## Project Structure
+
+```
+├── src/
+│   ├── main.cpp        # Entry point, config loading
+│   ├── game.cpp/h      # Game loop, scoring, AI spawning
+│   ├── snake.cpp/h     # Snake movement, growth, collision
+│   ├── controller.cpp/h # User input + AI pathfinding
+│   └── renderer.cpp/h  # SDL2 rendering
+├── cmake/
+├── config.txt          # Game settings (FPS, screen size, grid)
+└── snake_game.gif      # Demo
+```
+
+## Configuration
+
+Edit `config.txt` or enter settings at startup:
+
+```
+kFramesPerSecond=60
+kScreenWidth=640
+kScreenHeight=640
+kGridWidth=32
+kGridHeight=32
+```
+
+## Dependencies
+
+- cmake >= 3.7
+- make >= 4.1
+- gcc/g++ >= 5.4
+- SDL2 >= 2.0
+
+### Install SDL2 (Linux)
+```bash
+sudo apt-get install libsdl2-dev
+```
+
+## Building
+
+```bash
+git clone https://github.com/Mohamedhendawy312/2D_Snake_Game.git
+cd 2D_Snake_Game
+mkdir build && cd build
+cmake .. && make
+./SnakeGame
+```
+
+## Author
+
+Mohamed Hendawy
