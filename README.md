@@ -1,5 +1,9 @@
 # 2D Snake Game
 
+![C++](https://img.shields.io/badge/C++-17-blue.svg?style=flat&logo=c%2B%2B)
+![CMake](https://img.shields.io/badge/CMake-3.7+-green.svg?style=flat&logo=cmake)
+![Platform](https://img.shields.io/badge/Platform-Linux-lightgrey.svg?style=flat)
+
 A classic snake game built with C++ and SDL2, extended with AI opponents and configurable settings.
 
 <img src="snake_game.gif"/>
